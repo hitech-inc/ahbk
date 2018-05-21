@@ -1,0 +1,139 @@
+@extends('frontend.layouts.master')
+
+@section('content')
+	<div class="slider staticSlider" style="overflow: hidden;">
+    <ul>
+		        <li style="background-image: url('//www.antarn.ru.images.1c-bitrix-cdn.ru/upload/iblock/9f1/9f115b6eb9e20de92456f6ae1f064716.jpg?15167216751112579');">
+			<div class="slider_title">
+                <center style="margin: 0 auto; max-width: 1360px; padding: 0px 20px;">
+                                    </center>
+            </div>
+		</li>
+                        
+	</ul>
+	<div class="slider_pager"></div>
+	<a href="index.html#" class="prev_slide"></a>
+	<a href="index.html#" class="next_slide"></a>
+</div>
+<section id="content">
+	<div class="center">
+        <div class="breadcrumbs">
+    	<ul class="clear">
+            <li><a href="../../../index.html" title="Главная">Главная</a></li><li><a href="../../index.html" title="Продукция">Продукция</a></li><li><a href="../index.html" title="Редкоземельные металлы и их соединения">Редкоземельные металлы и их соединения</a></li><li><span>Иттрий металлический и его соединения</span></li>        </ul>
+    </div>
+    <div class="text">
+        <h1>
+                    Иттрий металлический и его соединения            </h1>
+                                    <p>
+	 Иттрий (лат. Yttrium) - редкоземельный металл, является химическим элементом III группы периодической системы, обозначается символом Y. Его атомный номер 39, атомная масса составляет. 88,90585(2) а.е.м. (г/моль). <span>Название металла происходит от минерала иттербита (гадолинита), который был впервые обнаружен в 1787 год недалеко от населенного пункта Иттербю на острове Ресарё Стокгольмского архипелага в Швеции финским химиком Юханом (Иоганном) Гадолином. Металлический иттрий впервые был получен немецким химиком Фридрихом Велером в 1828 году и содержал примеси эрбия, тербия и других лантаноидов.<br>
+	<br>
+	 Иттрий представляет собой светло-серый металл, плотность которого составляет 4,47 г/см3, а температура плавления 1522 °C. На воздухе Иттрий покрывается плотной защитной оксидной пленкой. Получение металлического иттрия основано на восстановлении безводных галогенидов иттрия литием или кальцием c последующей отгонкой примесей.</span>
+</p>
+<h3>Применение:</h3>
+<ul>
+	<li>Производство люминофоров<br>
+	</li>
+	<li>Производство сплавов<br>
+	</li>
+	<li>Строительство ядерных реакторов </li>
+	<li>
+	Радиоэлектронная промышленность</li>
+</ul>
+<p>
+	 Компания "Антарн" предлагает купить иттрий и его соединения по выгодным ценам. Есть возможность заказа гидроксидов, нитратов, сульфатов, карбонатов или оксалатов редкоземельных металлов.
+</p>    </div>
+    <div class="callback" style="height: 270px;">
+	<div class="callback_cover callback_panel">
+		<div class="valign_middle clear">
+			<div class="callback_title">
+                                    заявка отправлена
+                            </div>
+			<p>
+                                    Свяжемся с вами в ближайшее время
+                            </p>
+		</div>
+		<a href="index.html#" class="close_button close_cover"></a>
+	</div>
+	<div class="callback_form callback_panel">
+		<div class="valign_middle">
+			<form method="post" action="#" id="callbak_form" data-req="PHONE" onsubmit="yaCounter29195280.reachGoal('ЗАЯВКА', function () {
+    alert('Данные успешно отправлены');
+}, <Контекст, доступный по ключевому слову this внутри callback-функции>); return true;">
+                <input type="hidden" name="HEAD" value="Заявка со страницы: Иттрий металлический и его соединения"/>
+				<table>
+					<tr>
+						<td>
+							<input required type="text" name="NAME" placeholder="Ф.И.О."/>
+						</td>
+						<td>
+							<input required type="text" name="COMPANY" placeholder="Организация" class="text_input" />
+						</td>
+						<td>
+							<input required type="text" name="PHONE" placeholder="Телефон" class="phone_input" />
+						</td>
+						<td>
+							<input required type="text" name="EMAIL" placeholder="E-mail" class="email_input" />
+						</td>
+         </tr>
+</tbody>
+</table><br>
+<table>
+    <tbody>
+  <tr>
+						<td width="63%">
+							<textarea rows="2" cols="1" name="TEXTAREA" placeholder="Сообщение" class="text_input"></textarea>
+						</td>
+						<td>
+							<button class="button w_100_pс">
+								<span class="black_button">	
+                                    							
+								        Свяжитесь со мной
+                                    									<span class="gray_cover">
+                                    							
+								        Свяжитесь со мной
+                                                                        </span>
+								</span>
+							</button>
+						</td>
+					</tr>
+				</table>
+			</form>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$("#callbak_form").submit(function(){
+						formSubmit();
+						return false;
+					});
+				});
+			</script>
+		<br><center><p><input name="a" value="Даю согласие на обработку своих персональных данных" checked="" type="checkbox">&nbsp;Даю <a href="../../../soglashenie-ob-obrabotke-personalnykh-dannykh.php.html" target="_blank" style="color:#104E8B;text-decoration:underline;">согласие на обработку</a> своих персональных данных</p></center>
+		</div>
+	</div><!-- callback_form -->
+	<div class="callback_intro visible callback_panel">
+		<div class="valign_middle clear">
+			<a class="button w_240 callback_button">
+				<span class="black_button">	
+                    				
+					   Оставить заявку
+                    					<span class="red_cover">
+                        				
+    					   Оставить заявку
+                                            </span>
+				</span>
+			</a>
+			<div class="callback_title">
+                    				
+					   Позвоните
+                                        +7 (499) 702-39-83</div>
+            <p>
+            				
+			   или оставьте заявку и наш консультант свяжется с вами
+               
+			</p>
+		</div>
+
+	</div>
+</div><div class="grid">
+	                  <ul class="clear"></ul></div><!-- center --> <!-- content -->
+	                  </section>
+@endsection
