@@ -1,7 +1,7 @@
 <div class="center clear">
-   <div class="header">
-     <a href="/" class="logo">
-        Logo
+   <div class="header" style="height: 75px;">
+     <a href="/" class="logo" style="padding: 3px; cursor: pointer;">
+        <img src="/img/logo/logo002.png" alt="AHBK logo" style="max-width: 100%">
     </a>
     <div class="menu">
         <ul>

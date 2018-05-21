@@ -68,7 +68,7 @@
 <a href="#">СОГЛАШЕНИЕ ОБ ОБРАБОТКЕ ПЕРСОНАЛЬНЫХ ДАННЫХ</a>
 </div> -->
 <div class="footer_logo">
-    <a href="/"><img src="" alt="">Logo</a>
+    <a href="/"><img src="/img/logo/logo002.png" alt="AHBK logo" style="max-width: 100%; margin-top: -10px;"></a>
 </div>
 <div class="copyright">
     © 2018 AHBK.kz
