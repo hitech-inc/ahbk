@@ -5,7 +5,7 @@
   <ul>
     <li >
       <div class="slider_title">
-        <center style="margin: 0 auto; max-width: 1360px; padding: 0px 20px;">
+        <center class="mainText" style="margin: 0 auto; max-width: 1360px; padding: 0px 20px;">
          {!! $text->text !!}</center>
       </div>
       <video id="video" style="width: 100%;" autoplay="autoplay" muted loop controls="">

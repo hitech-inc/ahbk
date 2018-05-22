@@ -2511,3 +2511,8 @@ img.alignleft {
 				 -1px 1px 1px #616161,
 				 -1px -1px 1px #616161;
 }
+
+.mainText p{
+	font-size: 28px;
+	line-height: 35px;
+}
