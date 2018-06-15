@@ -46,6 +46,7 @@ return array(
     'App\\Http\\Requests\\CreateTechnicalEquipmentRequest' => $baseDir . '/app/Http/Requests/CreateTechnicalEquipmentRequest.php',
     'App\\Http\\Requests\\UpdateCategoryRequest' => $baseDir . '/app/Http/Requests/UpdateCategoryRequest.php',
     'App\\Http\\Requests\\UpdateTechnicalEquipmentRequest' => $baseDir . '/app/Http/Requests/UpdateTechnicalEquipmentRequest.php',
+    'App\\Mail\\Callback' => $baseDir . '/app/Mail/Callback.php',
     'App\\Models\\Backend\\About' => $baseDir . '/app/Models/Backend/About.php',
     'App\\Models\\Backend\\Background' => $baseDir . '/app/Models/Backend/Background.php',
     'App\\Models\\Backend\\Certificate' => $baseDir . '/app/Models/Backend/Certificate.php',

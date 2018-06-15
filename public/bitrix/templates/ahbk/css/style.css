@@ -1983,7 +1983,8 @@ cursor:pointer;
 }
 
 .contact_table td:first-child {
-	width: 195px;
+	/*width: 195px;*/
+	width: 250px;
 	font-family: 'RoadRadioBold', Arial, sans-serif;
 	font-size: 24px;
 }

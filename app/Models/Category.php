@@ -33,7 +33,10 @@ class Category extends Model
         'slug',
         'parent_id',
         'text',
-        'img'
+        'img',
+        'title_kz',
+        'text_kz',
+        'slug_kz'
     ];
 
     /**
@@ -72,23 +75,6 @@ class Category extends Model
         return $product->img;
     }
 
-    // public static function getCategories()
-    // {
-    //     $categories = Category::withDepth()->having('depth', '=', 0)->get();
-    //     $categories = Category::all();
-    //     $children = $categories->children;
-    //     dd($children);
-    //     return $categories;      
-    // }
-
-    // public static function getChildrens($categories)
-    // {
-    //     $categories = Category::whereSlug($categories)->first();
-    //     $children = $categories->children;
-    //     dd($children);
-    //     return $children;
-    // }
-
     public static function getCategories()
     {
         // Пустой массив
@@ -98,6 +84,9 @@ class Category extends Model
         //dd($categories);
         foreach ($categories as $category) 
         {
+            //Текущий язык
+            session('lang');
+
             // Пустой массив для детей
             $children = [];
 
@@ -108,9 +97,16 @@ class Category extends Model
                 $categorys = $category->descendants;
                 //dd($categorys);
 
-                // Делаю пеменную для детей, обращаемся к объекту $categorys в котором есть дети, и у него вызываем метод pluck который извлекает все значения коллекции по указанным ключам. Т.е. в этом случае извлечет у $categorys значения по полям title, и slug. И таким образом в перемнной $children будет массив детей.
-                $children = $categorys->pluck('title', 'slug')->all();
-                //dd($category);
+                // Делаю переменную для детей, обращаемся к объекту $categorys в котором есть дети, и у него вызываем метод pluck который извлекает все значения коллекции по указанным ключам. Т.е. в этом случае извлечет у $categorys значения по полям title, и slug. И таким образом в перемнной $children будет массив детей.
+                // Если язык в сессии равен ru то получаю русские title
+                if (session('lang') == 'ru')
+                {
+                    $children = $categorys->pluck('title', 'slug')->all();
+                }
+                else
+                {
+                    $children = $categorys->pluck('title_kz', 'slug')->all();
+                } 
             }
 
             // В массив $res вставляем $category и обращаемся к id категории, далее делаем ассоциативный массив и в нем делаю ключ категорий и в него сохраняю коллекцию категорий, далее ключ детей и в него сохраняю массив детей.

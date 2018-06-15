@@ -31,7 +31,13 @@ class Contact extends Model
         'latitude',
         'address',
         'phone',
-        'email'
+        'email',
+        'phone_city',
+        'contact_person',
+        'title',
+        'title_kz',
+        'address_kz',
+        'contact_person_kz'
     ];
 
     /**

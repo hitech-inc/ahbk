@@ -6,7 +6,8 @@
     <li style="background-image: url('/img/backgrounds/{{$background->img}}');">
      <div class="slider_title">
       <center style="margin: 0 auto; max-width: 1360px; padding: 0px 20px;">
-      Техническое оснащение                                    </center>
+      @lang('a.technical-equipment')                                   
+      </center>
     </div>
   </li>
 
@@ -19,7 +20,13 @@
 	<div class="center">
     <div class="breadcrumbs">
     	<ul class="clear">
-        <li><a href="/" title="Главная">Главная</a></li><li><span>Техническое оснащение</span></li>        </ul>
+        <li>
+          <a href="/" title="@lang('a.index')">@lang('a.index')</a>
+        </li>
+        <li>
+          <span>@lang('a.technical-equipment')</span>
+        </li>        
+      </ul>
       </div>
 
 
@@ -52,17 +59,38 @@
   @endforeach  
     <div style="clear:both"></div>        
   </div>--}}
+
   <div class="text">
     <div class="container">
-      <h2 style="border: 0px; background-image: initial; background-color: #ffffff;"><span style="border: 0px; background-image: initial;">Техническое оснащение швейного производства «АХБК»</span></h2>
+      <h2 style="border: 0px; background-image: initial; background-color: #ffffff;">
+        <span style="border: 0px; background-image: initial;">
+        @lang('a.title_technical_equipment')
+        </span>
+      </h2>
+
+      @if ( $lang == 'ru' )
+        <p>{!! App\Models\Backend\textBlocks::render('technical.text')->text !!}</p>
+      @else
+        <p>{!! App\Models\Backend\textBlocks::render('technical.text')->text_kz !!}</p>
+      @endif 
+
       <div class="row">
         @foreach( $techEquipments as $techEquipment )
-        <div class="col-4">
-          <h3 style="border: 0px; background-image: initial; background-color: #ffffff; font-size: 18px;"><span style="border: 0px; background-image: initial;">{{ $techEquipment->title }}</span></h3>
-          <p>{!! $techEquipment->text !!}</p>
-          <p></p> 
-          <div style="clear:both"></div> 
-        </div>
+          @if ( $lang == 'ru' )
+            <div class="col-4 imgTechnicalE">
+              <h3 style="border: 0px; background-image: initial; background-color: #ffffff; font-size: 18px;"><span style="border: 0px; background-image: initial;">{{ $techEquipment->title }}</span></h3>
+              <p>{!! $techEquipment->text !!}</p>
+              <p></p> 
+              <div style="clear:both"></div> 
+            </div>
+          @else
+            <div class="col-4 imgTechnicalE">
+              <h3 style="border: 0px; background-image: initial; background-color: #ffffff; font-size: 18px;"><span style="border: 0px; background-image: initial;">{{ $techEquipment->title_kz }}</span></h3>
+              <p>{!! $techEquipment->text_kz !!}</p>
+              <p></p> 
+              <div style="clear:both"></div> 
+            </div>
+          @endif
         @endforeach 
       </div>
     </div>        

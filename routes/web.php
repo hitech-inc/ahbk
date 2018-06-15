@@ -98,3 +98,6 @@ Route::patch('backend/textBlocks/{textBlocks}', ['as'=> 'backend.textBlocks.upda
 Route::delete('backend/textBlocks/{textBlocks}', ['as'=> 'backend.textBlocks.destroy', 'uses' => 'Backend\textBlocksController@destroy']);
 Route::get('backend/textBlocks/{textBlocks}', ['as'=> 'backend.textBlocks.show', 'uses' => 'Backend\textBlocksController@show']);
 Route::get('backend/textBlocks/{textBlocks}/edit', ['as'=> 'backend.textBlocks.edit', 'uses' => 'Backend\textBlocksController@edit']);
+
+// Localization
+Route::get('/lang/{lang}', 'SiteController@setLang');

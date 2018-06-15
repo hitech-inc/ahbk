@@ -27,7 +27,9 @@ class About extends Model
     public $fillable = [
         'title',
         'text',
-        'img'
+        'img',
+        'title_kz',
+        'text_kz'
     ];
 
     /**
@@ -38,7 +40,9 @@ class About extends Model
     protected $casts = [
         'title' => 'string',
         'text' => 'string',
-        'img' => 'string'
+        'img' => 'string',
+        'title_kz' => 'string',
+        'text_kz' => 'string'
     ];
 
     /**

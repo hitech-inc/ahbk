@@ -472,6 +472,7 @@ class ComposerStaticInit5d086c22ff1e37aca0019d0f88427f01
         'App\\Http\\Requests\\CreateTechnicalEquipmentRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreateTechnicalEquipmentRequest.php',
         'App\\Http\\Requests\\UpdateCategoryRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateCategoryRequest.php',
         'App\\Http\\Requests\\UpdateTechnicalEquipmentRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateTechnicalEquipmentRequest.php',
+        'App\\Mail\\Callback' => __DIR__ . '/../..' . '/app/Mail/Callback.php',
         'App\\Models\\Backend\\About' => __DIR__ . '/../..' . '/app/Models/Backend/About.php',
         'App\\Models\\Backend\\Background' => __DIR__ . '/../..' . '/app/Models/Backend/Background.php',
         'App\\Models\\Backend\\Certificate' => __DIR__ . '/../..' . '/app/Models/Backend/Certificate.php',

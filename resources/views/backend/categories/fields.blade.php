@@ -22,6 +22,24 @@
     {!! Form::textarea('text', null, ['class' => 'form-control editor']) !!}
 </div>
 
+<!-- Title Field -->
+<div class="form-group col-sm-4">
+    {!! Form::label('title_kz', 'Title_kz:') !!}
+    {!! Form::text('title_kz', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Slug_kz Field -->
+<div class="form-group col-sm-4">
+    {!! Form::label('slug_kz', 'Slug_kz:') !!}
+    {!! Form::text('slug_kz', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Text Field -->
+<div class="form-group col-sm-12 col-lg-12">
+    {!! Form::label('text_kz', 'Text_kz:') !!}
+    {!! Form::textarea('text_kz', null, ['class' => 'form-control editor']) !!}
+</div>
+
 <!-- Img Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('img', 'Img:') !!}

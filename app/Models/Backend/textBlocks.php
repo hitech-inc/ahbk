@@ -31,7 +31,8 @@ class textBlocks extends Model
         'text',
         'link',
         'url',
-        'label'
+        'label',
+        'text_kz'
     ];
 
     /**

@@ -1,25 +1,31 @@
 <div class="center">
     <div class="footer_navs clear">
       <div class="footer_nav">
-        <div class="nav_title">О компании</div>
+        <div class="nav_title">@lang('a.about')</div>
         <ul>
 
             <li>
-                <a href="/about/technical-equipment">Техническое оснащение</a>
+                <a href="/about/technical-equipment">@lang('a.technical-equipment')</a>
             </li>
 
             <li>
-                <a href="/about/certificates">Сертификаты</a>
+                <a href="/about/certificates">@lang('a.certificates')</a>
             </li>
 
         </ul></div>                       
         <div class="footer_nav">
-            <div class="nav_title">Продукция</div>    
+            <div class="nav_title">@lang('a.products')</div>    
             <ul>
                 @foreach (App\Models\Category::getCategories() as $category)
                 @if($loop->index < 4)
                 <li>
-                    <a href="{{ url('/products/' . $category['category']->slug) }}">{{$category['category']->title}}</a>
+                    <a href="{{ url('/products/' . $category['category']->slug) }}">
+                        @if (session('lang') == 'ru')
+                            {{$category['category']->title}}
+                        @else
+                             {{$category['category']->title_kz}} 
+                        @endif       
+                    </a>
                 </li>
                 @endif
                 @endforeach
@@ -31,30 +37,39 @@
             <ul></ul>
             <br>
             @foreach( App\Models\Category::getCategories() as $category )
-            @if( $loop->index > 3 )
-            <li>
-              <a href="{{ url('/products/' . $category['category']->slug) }}">{{ $category['category']->title }}</a>
-            </li> 
-            @endif
+                @if( $loop->index > 3 )
+                <li>
+                  <a href="{{ url('/products/' . $category['category']->slug) }}">
+                    @if (session('lang') == 'ru')
+                        {{ $category['category']->title }}
+                    @else
+                        {{ $category['category']->title_kz }}
+                    @endif    
+                    </a>
+                </li> 
+                @endif
             @endforeach
           </ul>
         </div>                        
         <div class="footer_nav">
-                <div class="nav_title">Контакты</div>
+                <div class="nav_title">@lang('a.contacts')</div>
                 <ul>
-                  @foreach( App\Models\Backend\Contact::getContacts() as $contact )
-                  @if( $loop->index == 0 )
-                  <li>
-
-                    <a style="color: #999999">{{ $contact->address }}</a>
-                </li>                        <li> 
-
-                    <a style="color: #999999">{{ $contact->phone }}</a>
-                </li>                        <li>
-
-                    <a style="color: #999999">{{ $contact->email }}</a>
-                </li>
-                @endif
+                @foreach( App\Models\Backend\Contact::getContacts() as $contact )
+                    @if( $loop->index == 0 )
+                        <li>
+                        @if (session('lang') == 'ru')
+                            <a style="color: #999999">{{ $contact->address }}</a>
+                        @else
+                            <a style="color: #999999">{{ $contact->address_kz }}</a>
+                        @endif
+                        </li>                        
+                        <li> 
+                            <a style="color: #999999">{{ $contact->phone }}</a>
+                        </li>                        
+                        <li>
+                            <a style="color: #999999">{{ $contact->email }}</a>
+                        </li>
+                    @endif
                 @endforeach
               </ul>
             </div>      
@@ -74,7 +89,7 @@
     © 2018 AHBK.kz
 </div>
 <div class="developer">
-    Разработано в  – <a target="_blank" href="http://qaz-tech.kz">Hitech</a>
+    @lang('a.copyrignt')  – <a target="_blank" href="http://qaz-tech.kz">Hitech</a>
 </div>
 </div>
 </div>

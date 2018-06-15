@@ -23,13 +23,14 @@
 		});
 
 		myMap.geoObjects.add(myPlacemark);
+		myMap.setType('yandex#hybrid');
 	}
 </script>
 <section id="content">
 	<div class="center">
 		<div class="breadcrumbs">
 			<ul class="clear">
-				<li><a href="/" title="Главная">Главная</a></li><li><span>Контакты</span></li>        
+				<li><a href="/" title="Главная">@lang('a.index')</a></li><li><span>@lang('a.contacts')</span></li>        
 			</ul>
 		</div>
 <!-- <style>
@@ -51,53 +52,91 @@
 				<div class="contact_table">
 					<table>
 						@foreach ( $contacts as $contact )
-						@if ( $loop->index == 0 )
-						<tr>
-							<td colspan="2" style="text-align:center;">Отдел продаж в Шымкенте</td>
-						</tr>
+							@if ( $loop->index == 0 )
 							<tr>
-								<td>Адрес</td>
-								<td>{{ $contact->address }}</td>
-							</tr>
-							<tr>
-								<td>
-									Телефон
-								</td>
-								<td>
-									{{ $contact->phone }}
+								<td colspan="2" style="text-align:center;">
+								@if($lang == 'ru')	
+									{{ $contact->title }}
+								@else
+									{{ $contact->title_kz }}
+								@endif
 								</td>
 							</tr>
+								<tr>
+									@if($lang == 'ru')	
+										<td>Адрес</td>
+										<td>{{ $contact->address }}</td>
+									@else
+										<td>Мекенжай</td>
+										<td>{{ $contact->address_kz }}</td>
+									@endif
+								</tr>
+								<tr>
+									@if($lang == 'ru')	
+										<td>Телефон</td>
+										<td>{{ $contact->phone_city }}</td>
+									@else
+										<td>Телефон</td>
+										<td>{{ $contact->phone_city }}</td>
+									@endif
+								</tr>
+							@else	
 							<tr>
-								<td>
-									E-mail
-								</td>
-								<td>
-									{{ $contact->email }}
+								<td colspan="2" style="text-align:center;">
+									@if($lang == 'ru')
+										{{ $contact->title }}
+									@else
+										{{ $contact->title_kz }}
+									@endif
 								</td>
 							</tr>
-						@else	
-						<tr>
-							<td colspan="2" style="text-align:center;">Отдел продаж в Алматы</td>
-						</tr>
+								<tr>
+									@if($lang == 'ru')	
+										<td>Телефон городской</td>
+										<td>{{ $contact->phone_city }}</td>
+									@else
+										<td>Стационарлық телефон</td>
+										<td>{{ $contact->phone_city }}</td>
+									@endif
+								</tr>
+								<tr>
+									<td>
+									@if($lang == 'ru')
+										Телефон мобильный
+									@else
+										Мобильдік телефон
+									@endif		
+									</td>
+									<td>
+										{{ $contact->phone }}
+									</td>
+								</tr>
+								<tr>
+									<td>
+										E-mail
+									</td>
+									<td>
+										 {{ $contact->email }}
+									</td>
+								</tr>
+								<tr>
+									@if($lang == 'ru')
+									<td>
+										Контактной лицо
+									</td>
+									<td>
+										{{ $contact->contact_person }}
+									</td>
+									@else
+									<td>Байланысушы тұлға</td>
+									<td>
+										{{ $contact->contact_person_kz }}
+									</td>
+									@endif	
+								</tr>
 							<tr>
-								<td>
-									Телефон
-								</td>
-								<td>
-									{{ $contact->phone }}
-								</td>
-							</tr>
-							<tr>
-								<td>
-									E-mail
-								</td>
-								<td>
-									 {{ $contact->email }}
-								</td>
-							</tr>
-						<tr>
 							@endif
-							@endforeach
+						@endforeach
 						</table>
 					</div>
 					@include('frontend.partials._callback')

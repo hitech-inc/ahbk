@@ -27,7 +27,9 @@ class TechnicalEquipment extends Model
     public $fillable = [
         'title',
         'text',
-        'img'
+        'img',
+        'title_kz',
+        'text_kz'
     ];
 
     /**

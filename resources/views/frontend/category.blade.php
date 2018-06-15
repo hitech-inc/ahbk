@@ -18,28 +18,69 @@
     <div class="center">
         <div class="breadcrumbs">
             <ul class="clear">
-                <li><a href="/" title="Главная">Главная</a></li><li><a href="/products" title="Продукция">Продукция</a></li><li><span>{{ $categories->title }}
-                </span></li>        </ul>
+              <li>
+                <a href="/" title="@lang('a.index')">@lang('a.index')</a>
+              </li>
+              <li>
+                <a href="/products" title="@lang('a.products')">@lang('a.products')</a>
+              </li>
+              <li>
+                @if($lang == 'ru')
+                  <span>{{ $categories->title }}</span>
+                @else
+                  <span>{{ $categories->title_kz }}</span>
+                @endif
+            </li>        
+            </ul>
             </div>
             <div class="grid">
-                <ul class="clear">  
-                    @foreach( $children as $child )    
+                <ul class="clear"> 
+                @if(!$children->isEmpty()) 
+                  @foreach( $children as $child )    
                     <li data-form="1/4" class="smaller" style="width: 33.33%">
                         <div class="grid_block">
                             <div class="product">
                                 <div class="product_img">
-                                    <img class="product_img" src="/img/products/{{ $child->img }}" alt="" />
+                                    <img class="product_img" src="/img/products/{{ $child->img }}" alt="" style="width: 150%"/>
                                 </div>
-                                <div class="product_title">{{ $child->title }}</div>
+                                <div class="product_title">
+                                  @if($lang == 'ru')
+                                    {{ $child->title }}
+                                  @else
+                                     {{ $child->title_kz }}
+                                  @endif    
+                                </div>
                                 <a href="{{ url('products/'. $categories->slug . '/' . $child->slug) }}" class="product_link">
                                     <span class="mask"></span>
-                                    <span class="product_text">{!! $child->text !!}</span>
-                                    <span class="more_span"><span>Подробнее</span></span>
+                                    <span class="product_text">
+                                      @if($lang == 'ru')
+                                        {!! $child->text !!}
+                                      @else
+                                        {!! $child->text_kz !!} 
+                                      @endif  
+                                    </span>
+                                    <span class="more_span">
+                                      @if($lang == 'ru')
+                                        <span>Подробнее</span>
+                                      @else
+                                        <span>Толығырақ</span>
+                                      @endif  
+                                    </span>
                                 </a>
                             </div>
                         </div>
                     </li>
-                    @endforeach     
+                  @endforeach
+                @else    
+                  <div class="text">
+                    <h1>
+                      {{ $categories->title }}           
+                    </h1>
+                    <p>
+                     {!! $categories->text !!}
+                   </p>
+                 </div>
+                @endif        
                     <div style="clear: both;"></div>
                 </ul>
             </div>

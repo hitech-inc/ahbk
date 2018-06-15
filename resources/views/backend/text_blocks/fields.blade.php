@@ -10,6 +10,12 @@
     {!! Form::textarea('text', null, ['class' => 'form-control editor']) !!}
 </div>
 
+<!-- Text_kz Field -->
+<div class="form-group col-sm-12 col-lg-12">
+    {!! Form::label('text_kz', 'Text_kz:') !!}
+    {!! Form::textarea('text_kz', null, ['class' => 'form-control editor']) !!}
+</div>
+
 <!-- Link Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('link', 'Link:') !!}
