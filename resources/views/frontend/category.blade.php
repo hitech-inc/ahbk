@@ -33,7 +33,7 @@
             </li>        
             </ul>
             </div>
-            <div class="grid">
+            <div class="grid mygrid">
                 <ul class="clear"> 
                 @if(!$children->isEmpty()) 
                   @foreach( $children as $child )    
@@ -41,7 +41,7 @@
                         <div class="grid_block">
                             <div class="product">
                                 <div class="product_img">
-                                    <img class="product_img" src="/img/products/{{ $child->img }}" alt="" style="width: 150%"/>
+                                    <img class="product_img" src="/img/products/{{ $child->img }}" alt="" style="width: 100%"/>
                                 </div>
                                 <div class="product_title">
                                   @if($lang == 'ru')

@@ -42,6 +42,10 @@
 
 <!-- Img Field -->
 <div class="form-group col-sm-6">
+    @if ( isset($category) && isset($category->img) )
+        <img src="{{ asset('img/products/' . $category->img) }}" alt="" class="img-responsive">
+        <br>
+    @endif
     {!! Form::label('img', 'Img:') !!}
     {!! Form::file('img') !!}
 </div>

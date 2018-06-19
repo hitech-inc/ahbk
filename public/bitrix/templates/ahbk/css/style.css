@@ -1548,7 +1548,7 @@ cursor:pointer;
 	position: relative;
 }
 
-.text ul li:before {
+/*.text ul li:before {
 	position: absolute; 
 	left: 0px; top: 8px;
 	width: 10px;
@@ -1556,7 +1556,7 @@ cursor:pointer;
 	background: #000;
 	border-radius: 50%;
 	content: '';
-}
+}*/
 
 .table_head {
 	padding: 0px 50px;

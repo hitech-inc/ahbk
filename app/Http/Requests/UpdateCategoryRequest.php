@@ -25,6 +25,11 @@ class UpdateCategoryRequest extends FormRequest
      */
     public function rules()
     {
-        return Category::$rules;
+        //return Category::$rules;
+        return [
+            'img' => 'required',
+            'title' => 'required',
+            'slug' => 'required'
+        ];
     }
 }

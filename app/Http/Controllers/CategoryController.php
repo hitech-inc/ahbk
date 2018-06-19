@@ -126,6 +126,11 @@ class CategoryController extends AppBaseController
      */
     public function update($id, UpdateCategoryRequest $request)
     {
+
+        $data = $request->validated();
+        // $data = $request->except('_token');
+        //dd($data);
+
         $category = $this->categoryRepository->findWithoutFail($id);
 
         if (empty($category)) {
@@ -133,20 +138,18 @@ class CategoryController extends AppBaseController
 
             return redirect(route('categories.index'));
         }
+        //dd($request->all());
+        if ($request->hasFile('img'))
+        {
+            $file = $request->img;
+            $filename = date('y-m-d-H-i-s') . uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move( public_path('/img/products/'), $filename );
+            $data['img'] = $filename;
+            //dd($data['img']);
+        }
 
-        $category = $this->categoryRepository->update($request->all(), $id);
-
-        //Nested hierarchy
-        // if ( $input['parent_id'] == null )
-        // {
-        //     $category->saveAsRoot();
-        // }
-        // else
-        // {
-        //     $parent = Category::find($input['parent_id']);
-        //     $parent->appendNode($category);
-        // }
-
+        $category = $this->categoryRepository->update($data, $id);
+        //dd($category);
         Flash::success('Category updated successfully.');
 
         return redirect(route('categories.index'));
