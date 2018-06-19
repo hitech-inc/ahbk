@@ -44,7 +44,7 @@
         </ul>
     </div>
     <div class="text">
-        @if($lang == 'ru0')
+        @if($lang == 'ru')
             <h1>
             {{ $categories->title }}           
             </h1>

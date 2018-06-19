@@ -111,7 +111,7 @@ class SiteController extends Controller
             $background = Background::where('url', 'product')->first();
             $categories = Category::whereSlug( $child )->first();
             $lang = session('lang');
-
+            //dd($lang);
             if ( !$categories ) return redirect( '/products' );
         
             return view( 'frontend.product', compact('categories', 'category', 'background') )->with('lang', $lang);
