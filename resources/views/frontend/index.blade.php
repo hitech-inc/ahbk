@@ -31,7 +31,7 @@
           <div class="grid_block">
             <div class="text_panel" style="overflow: hidden;">
               <div class="h3">@lang('a.about')</div>
-              @if ($lang == 'ru')
+              @if (session('lang') == 'ru')
                 <p>{!! $textAbout->text !!}</p>
               @else
                 <p>{!! $textAbout->text_kz !!}</p>      
@@ -61,7 +61,7 @@
                 @foreach( App\Models\Backend\Contact::getContacts() as $contact )
                   @if ( $contact->id == 2 )
                   <div class="info_text" style="color: #fff; font-weight: bold">
-                    @if ($lang == 'ru')
+                    @if (session('lang') == 'ru')
                       {{$contact->title}}
                     @else
                       {{$contact->title_kz}}
@@ -69,7 +69,7 @@
                   </div>
                   <div class="sliding_text_front" style="position: initial; left: initial; top: initial;">
                     <div class="info_text">
-                      @if ($lang == 'ru')
+                      @if (session('lang') == 'ru')
                         {{ $contact->address }}
                       @else
                         {{ $contact->address_kz }}
@@ -79,7 +79,7 @@
                   </div>
                   @elseif($contact->id == 3)
                   <div class="info_text" style="color: #fff; font-weight: bold">
-                    @if($lang == 'ru')
+                    @if(session('lang') == 'ru')
                       {{ $contact->title }}
                     @else
                       {{$contact->title_kz}} 
@@ -87,7 +87,7 @@
                   </div>
                   <div class="sliding_text_front" style="position: : initial; left: initial; top: initial;">
                     <div class="info_text">
-                      @if ($lang == 'ru')
+                      @if (session('lang') == 'ru')
                         {{ $contact->address }}
                       @else
                         {{ $contact->address_kz }}

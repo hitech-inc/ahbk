@@ -100,4 +100,4 @@ Route::get('backend/textBlocks/{textBlocks}', ['as'=> 'backend.textBlocks.show',
 Route::get('backend/textBlocks/{textBlocks}/edit', ['as'=> 'backend.textBlocks.edit', 'uses' => 'Backend\textBlocksController@edit']);
 
 // Localization
-Route::get('/lang/{lang}', 'SiteController@setLang');
+Route::get('/lang/{lang}', 'SiteController@index');

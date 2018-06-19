@@ -18,20 +18,22 @@ use App;
 
 class SiteController extends Controller
 {
-    //
-    public function index()
+    // Передаю в функцию параметр языка, по умолчанию русский
+    public function index($lang = "ru")
     {
-      App::setLocale( session('lang') );
+        // Вызываю функцию setLang что бы определить язык, передаю в него параметр lang, т.е. текущий язык
+      self::setLang( $lang );
       $text = textBlocks::render('main.text');
       $textAbout = textBlocks::render('about.text');
       $lang = session('lang');
-      //dd($block);
+      //dd($lang);
         return view('frontend.index', compact('text', 'textAbout'))->with('lang', $lang);
     }
 
     public function about()
     {
-        App::setLocale( session('lang') );
+        // Вызываю функцию определения языка передаю в нее сессию, и в ней переменную lang в которой будет находится определение языка
+        self::setLang( session('lang') );
         $background = Background::where('url', 'about')->first();
         //$abouts = About::all();
         $abouts = About::all();
@@ -42,7 +44,7 @@ class SiteController extends Controller
 
     public function technical()
     {
-      App::setLocale( session('lang') );
+      self::setLang( session('lang') );
       $background = Background::where('url', 'technical-equipment')->first();
       $techEquipments = TechnicalEquipment::get();
       $lang = session('lang');
@@ -52,8 +54,8 @@ class SiteController extends Controller
 
     public function certificates()
     {
-        App::setLocale( session('lang') );
-      $certificates = Certificate::all();
+        self::setLang( session('lang') );
+        $certificates = Certificate::all();
 
         return view('frontend.certificates', compact('certificates'));
     }
@@ -64,12 +66,12 @@ class SiteController extends Controller
         //products index page
         if ( !$categories )
         {
-        App::setLocale( session('lang') );
-        $textProd = textBlocks::render('products.text');
+            self::setLang( session('lang') );
+            $textProd = textBlocks::render('products.text');
 
-        $background = Background::where('url', 'products')->first();
-            $categories = Category::withDepth()->having('depth', '=', 0)->get();
-        $lang = session('lang');
+            $background = Background::where('url', 'products')->first();
+                $categories = Category::withDepth()->having('depth', '=', 0)->get();
+            $lang = session('lang');
             //dd($categories);
             return view('frontend.products', compact('categories', 'background', 'textProd'))->with('lang', $lang);
         }
@@ -77,8 +79,8 @@ class SiteController extends Controller
         //category page
         else if ( $categories && !$child )
         {
-        App::setLocale( session('lang') );
-        $background = Background::where('url', 'category')->first();
+            self::setLang( session('lang') );
+            $background = Background::where('url', 'category')->first();
             $categories = Category::whereSlug($categories)->first();
             if (!$categories) return redirect('/products');
             $children = $categories->children;
@@ -102,13 +104,13 @@ class SiteController extends Controller
         //child page
         else if ( $categories && $child )
         {
-        App::setLocale( session('lang') );
-        //Категория для хлебных крошек
-        $category = Category::whereSlug( $categories )->first();
+            self::setLang( session('lang') );
+            //Категория для хлебных крошек
+            $category = Category::whereSlug( $categories )->first();
             
-        $background = Background::where('url', 'product')->first();
-        $categories = Category::whereSlug( $child )->first();
-        $lang = session('lang');
+            $background = Background::where('url', 'product')->first();
+            $categories = Category::whereSlug( $child )->first();
+            $lang = session('lang');
 
             if ( !$categories ) return redirect( '/products' );
         
@@ -118,14 +120,14 @@ class SiteController extends Controller
 
     public function galleries()
     {
-        App::setLocale( session('lang') );
-      $galleries = Gallery::all();
+        self::setLang( session('lang') );
+        $galleries = Gallery::all();
         return view('frontend.galleries', compact('galleries'));
     }
 
     public function contacts()
     {
-      App::setLocale( session('lang') );
+      self::setLang( session('lang') );
       $lang = session('lang');
       $contacts = Contact::all();
 
@@ -148,12 +150,12 @@ class SiteController extends Controller
       return 1;
     }
 
-    // Localization
+    // Localization здесь создается сессия языка
     public function setLang( $language )
     {
         App::setLocale( $language );
         session(['lang' => $language]);
         $lang = session('lang');
-        return self::index();
+        //return self::index();
     }
 }
