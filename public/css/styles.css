@@ -14,5 +14,6 @@ a.indexMore:hover{
 
 .imgTechnicalE img{
 	width: 100%;
-	border-radius: 8px;
+	height: 100%;
+	border-radius: 15px;
 }

@@ -5,7 +5,7 @@
 	<div class="center">
 		<div class="breadcrumbs">
 			<ul class="clear">
-				<li><a href="/" title="Главная">Главная</a></li><li><span>Сертификаты</span></li>
+				<li><a href="/" title="Главная">@lang('a.index')</a></li><li><span>@lang('a.certificates')</span></li>
 			</ul>
 		</div>
 		<div class="container">

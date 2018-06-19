@@ -35,6 +35,16 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'FiraBold';
+    src:url('../fonts/FiraSans-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'FiraRegular';
+    src:url('../fonts/FiraSans-Regular.otf') format('opentype');
+}
+
 /* --------------- reset.css --------------- */
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, u, i,  dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
 	margin: 0;
@@ -109,7 +119,7 @@ body {
 	line-height: 1;
 	color: #1f1f1f;
 	text-align: left;
-	font: 14px 'ProximaNova', Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+	font: 14px 'FiraRegular';
 	background: #ededed;
 	min-width: 1200px;
 	padding-top: 70px;
@@ -149,7 +159,7 @@ button::-moz-focus-inner {
 }
 
 h1, .h1 {
-	font-family: 'RoadRadioBold', Arial, sans-serif;
+	font-family: 'Firabold';
 	margin: 0px 0px 30px 0px;
 	padding: 0px 0px 24px 0px;
 	font-size: 52px;
@@ -166,7 +176,7 @@ h2, .h2 {
 
 h3, .h3 {
 	display: block;
-	font-family: 'ProximaNova', Arial, sans-serif;
+	font-family: 'FiraBold';
 	margin: 0px 0px 30px 0px;
 	font-weight: bold;
 	font-size: 28px;
@@ -1352,7 +1362,7 @@ cursor:pointer;
 
 .info_title {
 	padding: 28px 32px 25px 32px;
-	font-family: 'ProximaNova', Arial, sans-serif;
+	font-family: 'FiraBold';
     font-weight: 700;    
 	font-size: 21px;
 	color: #fff;
@@ -1543,7 +1553,7 @@ cursor:pointer;
 	left: 0px; top: 8px;
 	width: 10px;
 	height: 10px;
-	background: red;
+	background: #000;
 	border-radius: 50%;
 	content: '';
 }
@@ -1615,7 +1625,7 @@ cursor:pointer;
 .text_panel .h3, 
 .text_panel h3 {
 	margin-bottom: 18px;
-    font-family: 'ProximaNova', Arial, sans-serif;
+    font-family: 'FiraBold';
     font-weight: 700;    
 }
 
@@ -1662,7 +1672,7 @@ cursor:pointer;
 }
 
 .text h1{
-    font-family:'ProximaNova';
+    font-family:'FiraBold';
     font-weight: 700;
 }
 
@@ -1716,7 +1726,7 @@ cursor:pointer;
 
 .red_ban_title {
 	margin: 0px 0px 22px 0px;
-	font-family: 'RoadRadioBold', Arial, sans-serif;
+	font-family: 'FiraRegular';
 	font-size: 52px;
 	color: #fff;
 	font-weight: normal;
@@ -1766,7 +1776,7 @@ cursor:pointer;
 	margin-top: -40px;
 	padding: 0px 0px 8px 0px;
 	font-size: 34px;
-	font-family: 'RoadRadioBold', Arial, sans-serif;
+	font-family: 'FiraBold';
 	opacity: 0;
 }
 
@@ -1985,7 +1995,7 @@ cursor:pointer;
 .contact_table td:first-child {
 	/*width: 195px;*/
 	width: 250px;
-	font-family: 'RoadRadioBold', Arial, sans-serif;
+	font-family: 'FiraBold';
 	font-size: 24px;
 }
 
@@ -2051,7 +2061,7 @@ cursor:pointer;
 
 .text_list li .h3,
 .text_list li h3 {
-    font-family: 'ProximaNova';
+    font-family: 'FiraBold';
     font-weight: 700;
     font-size: 28px;
 	margin-bottom: 18px;
@@ -2078,7 +2088,7 @@ cursor:pointer;
 
 .pagination li {
 	display: inline-block;
-	font-family: 'RoadRadioBold', Arial, sans-serif;
+	font-family: 'FiraBold';
 	font-size: 24px;
 	color: #b3b3b3;
 	padding: 18px 17px 16px 17px;
@@ -2233,7 +2243,7 @@ cursor:pointer;
 
 .nav_title {
 	margin: 0px 0px 13px 0px;	
-	font-family: 'RoadRadioBold', Arial, sans-serif;
+	font-family: 'FiraBold';
 	font-size: 16px;
 	color: #b6b6b8;
 }
@@ -2452,7 +2462,7 @@ img.alignleft {
 }
 /*--------------------*/
 .action p{
-    font-family: 'ProximaNova'!important;
+    font-family: 'FiraRegular'!important;
 }
 .action .red_button .white_cover{
     border-color: #fff;
@@ -2516,4 +2526,5 @@ img.alignleft {
 .mainText p{
 	font-size: 28px;
 	line-height: 35px;
+	font-family: 'FiraBold';
 }

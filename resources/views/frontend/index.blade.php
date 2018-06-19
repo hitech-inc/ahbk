@@ -6,7 +6,7 @@
     <li >
       <div class="slider_title">
         <center class="mainText" style="margin: 0 auto; max-width: 1360px; padding: 0px 20px;">
-         @if ($lang == 'ru')
+         @if (session('lang') == 'ru')
           {!! $text->text !!}
          @else
           {!! $text->text_kz !!}

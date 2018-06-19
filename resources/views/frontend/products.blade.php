@@ -32,7 +32,7 @@
         </div>
         <div class="text" style="padding: 15px;">
             @if ( $lang == 'ru' )
-                {!! $textProd->text !!}
+                {!! $textProd->text !!}   
             @else  
                 {!! $textProd->text_kz !!}
             @endif      

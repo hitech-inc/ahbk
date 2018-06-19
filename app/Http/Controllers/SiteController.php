@@ -26,7 +26,7 @@ class SiteController extends Controller
       $textAbout = textBlocks::render('about.text');
       $lang = session('lang');
       //dd($block);
-    	return view('frontend.index', compact('text', 'textAbout'))->with('lang', $lang);
+        return view('frontend.index', compact('text', 'textAbout'))->with('lang', $lang);
     }
 
     public function about()
@@ -37,7 +37,7 @@ class SiteController extends Controller
         $abouts = About::all();
         $lang = session('lang');
 
-    	return view('frontend.about', compact('abouts', 'background'))->with('lang', $lang);
+        return view('frontend.about', compact('abouts', 'background'))->with('lang', $lang);
     }
 
     public function technical()
@@ -52,37 +52,39 @@ class SiteController extends Controller
 
     public function certificates()
     {
+        App::setLocale( session('lang') );
       $certificates = Certificate::all();
 
-    	return view('frontend.certificates', compact('certificates'));
+        return view('frontend.certificates', compact('certificates'));
     }
 
     public function products( $categories = "", $child = "" )
     {
 
-    	//products index page
-    	if ( !$categories )
-    	{
+        //products index page
+        if ( !$categories )
+        {
         App::setLocale( session('lang') );
         $textProd = textBlocks::render('products.text');
-        $background = Background::where('url', 'products')->first();
-    		$categories = Category::withDepth()->having('depth', '=', 0)->get();
-        $lang = session('lang');
-    		//dd($categories);
-    		return view('frontend.products', compact('categories', 'background', 'textProd'))->with('lang', $lang);
-    	}
 
-    	//category page
-    	else if ( $categories && !$child )
-    	{
+        $background = Background::where('url', 'products')->first();
+            $categories = Category::withDepth()->having('depth', '=', 0)->get();
+        $lang = session('lang');
+            //dd($categories);
+            return view('frontend.products', compact('categories', 'background', 'textProd'))->with('lang', $lang);
+        }
+
+        //category page
+        else if ( $categories && !$child )
+        {
         App::setLocale( session('lang') );
         $background = Background::where('url', 'category')->first();
-    		$categories = Category::whereSlug($categories)->first();
-    		if (!$categories) return redirect('/products');
-    		$children = $categories->children;
+            $categories = Category::whereSlug($categories)->first();
+            if (!$categories) return redirect('/products');
+            $children = $categories->children;
         //dd($children);
         $lang = session('lang');
-    		//dd($l);
+            //dd($l);
             // Если children не пустой
             if(!$children->isEmpty())
             {
@@ -95,29 +97,30 @@ class SiteController extends Controller
                 return view('frontend.category', compact('categories', 'children', 'background'))->with('lang', $lang);
             }
             
-    	}
+        }
 
-    	//child page
-    	else if ( $categories && $child )
-    	{
+        //child page
+        else if ( $categories && $child )
+        {
         App::setLocale( session('lang') );
         //Категория для хлебных крошек
         $category = Category::whereSlug( $categories )->first();
-    		
+            
         $background = Background::where('url', 'product')->first();
         $categories = Category::whereSlug( $child )->first();
         $lang = session('lang');
 
-    		if ( !$categories ) return redirect( '/products' );
+            if ( !$categories ) return redirect( '/products' );
         
-    		return view( 'frontend.product', compact('categories', 'category', 'background') )->with('lang', $lang);
-    	}
+            return view( 'frontend.product', compact('categories', 'category', 'background') )->with('lang', $lang);
+        }
     }
 
     public function galleries()
     {
+        App::setLocale( session('lang') );
       $galleries = Gallery::all();
-    	return view('frontend.galleries', compact('galleries'));
+        return view('frontend.galleries', compact('galleries'));
     }
 
     public function contacts()
@@ -126,7 +129,7 @@ class SiteController extends Controller
       $lang = session('lang');
       $contacts = Contact::all();
 
-    	return view('frontend.contacts', compact('contacts'))->with('lang', $lang);
+        return view('frontend.contacts', compact('contacts'))->with('lang', $lang);
     }
 
     public function callback( Request $request )
