@@ -73,12 +73,21 @@
                   @endforeach
                 @else    
                   <div class="text">
-                    <h1>
-                      {{ $categories->title }}           
-                    </h1>
-                    <p>
-                     {!! $categories->text !!}
-                   </p>
+                    @if (session('lang') == 'ru')
+                      <h1>
+                        {{ $categories->title }}           
+                      </h1>
+                      <p>
+                        {!! $categories->text !!}
+                      </p>
+                    @else
+                      <h1>
+                        {{ $categories->title_kz }}           
+                      </h1>
+                      <p>
+                        {!! $categories->text_kz !!}
+                      </p>
+                    @endif
                  </div>
                 @endif        
                     <div style="clear: both;"></div>

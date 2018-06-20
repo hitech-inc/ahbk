@@ -127,8 +127,8 @@ class CategoryController extends AppBaseController
     public function update($id, UpdateCategoryRequest $request)
     {
 
-        $data = $request->validated();
-        // $data = $request->except('_token');
+        // $data = $request->validated();
+        $data = $request->except('_token');
         //dd($data);
 
         $category = $this->categoryRepository->findWithoutFail($id);

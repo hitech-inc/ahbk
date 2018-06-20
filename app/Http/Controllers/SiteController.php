@@ -84,8 +84,8 @@ class SiteController extends Controller
             $categories = Category::whereSlug($categories)->first();
             if (!$categories) return redirect('/products');
             $children = $categories->children;
-        //dd($children);
-        $lang = session('lang');
+            //dd($children);
+            $lang = session('lang');
             //dd($l);
             // Если children не пустой
             if(!$children->isEmpty())

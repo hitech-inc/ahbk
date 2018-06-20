@@ -58,8 +58,8 @@ class Category extends Model
      * @var array
      */
     public static $rules = [
-        'title' => 'required',
-        'slug' => 'required'
+        // 'title' => 'required',
+        // 'slug' => 'required'
     ];
 
     public static function select() 
